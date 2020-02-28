@@ -100,6 +100,6 @@ class GameMaster:
 
 
 
-g1 = GameMaster(5,3,400)
+g1 = GameMaster(5,4,400)
 g1.play_play_game_with_nn(20,100)
 g1.play_game_over_trained_network()
