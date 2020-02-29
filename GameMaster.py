@@ -12,8 +12,8 @@ class GameMaster:
 	def __init__(self,n,n_row,sim_per_game=10):
 		self.n = n
 		self.n_row = n_row
-		self.p0 = pvn.PolicyValueNet(n,n)
-		self.p1 = pvn.PolicyValueNet(n,n)
+		self.p0 = pvn.PolicyValueNet(n,n,'New_Trained_Model_10.dt')
+		self.p1 = pvn.PolicyValueNet(n,n,'New_Trained_Model_10.dt')
 		self.g  = GAME.Game(self.p0,self.p0,n,n_row)
 		self.sim_per_game = sim_per_game
 
@@ -30,6 +30,7 @@ class GameMaster:
 	def play_game(self,num_of_games=100):
 		self.data = []
 		for game in range(num_of_games):
+			print("Playing Game : ",game)
 			self.g = GAME.Game(self.p0,self.p0,self.n,self.n_row)
 			current_series = self.g.play_game(self.sim_per_game)
 			for triples in current_series:
