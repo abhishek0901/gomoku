@@ -12,8 +12,8 @@ class GameMaster:
 	def __init__(self,n,n_row,sim_per_game=10):
 		self.n = n
 		self.n_row = n_row
-		self.p0 = pvn.PolicyValueNet(n,n,'New_Trained_Model_10.dt')
-		self.p1 = pvn.PolicyValueNet(n,n,'New_Trained_Model_10.dt')
+		self.p0 = pvn.PolicyValueNet(n,n,'New_Trained_Model_6.dt')
+		self.p1 = pvn.PolicyValueNet(n,n,'New_Trained_Model_6.dt')
 		self.g  = GAME.Game(self.p0,self.p0,n,n_row)
 		self.sim_per_game = sim_per_game
 
@@ -84,7 +84,7 @@ class GameMaster:
 			plt.ylabel("Loss Function for Iteration %d"%cnt)
 			plt.legend(["Total Loss","Value Loss","Policy Loss"])
 			plt.show()
-			name = "New_Trained_Model_" + str(cnt+1) + ".dt"
+			name = "New_Trained_Model_" + str(6 + cnt+1) + ".dt"
 			self.p0.save_model(name)
 			LOSS.extend(loss)
 		plt.plot(LOSS)

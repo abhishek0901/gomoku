@@ -64,12 +64,13 @@ class Game:
 
     def play_game_with_winner(self,sim_num=100):
         #play the initial move manually
-        game_end,winner=self.play_move(sim_num=sim_num,t=1.0)
+        # when in the play with winner mode, both players should use strongest moves. Use higher temperature.
+        game_end,winner=self.play_move(sim_num=sim_num,t=4.0)
         self.state.print_board()
         #cntr = 2
         while not game_end:
             #print("Game Cntr : ",cntr)
-            game_end,winner=self.play_move(sim_num=sim_num,t=1.0)
+            game_end,winner=self.play_move(sim_num=sim_num,t=4.0)
             self.state.print_board()
             #cntr += 1
             #TODO: adjust temperature

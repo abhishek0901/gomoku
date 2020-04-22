@@ -98,7 +98,7 @@ class Board(object):
 		return self.is_terminated
 
 	def get_winner(self):
-		if game_terminated():
+		if self.game_terminated():
 			return self.winner
 		return -1
 
